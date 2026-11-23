@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Chemiczne Party</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=JetBrains+Mono:wght@500;700&family=Lexend:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/01-variables.css">
+<link rel="stylesheet" href="css/02-base.css">
+<link rel="stylesheet" href="css/03-topbar.css">
+<link rel="stylesheet" href="css/04-setup.css">
+<link rel="stylesheet" href="css/05-board.css">
+<link rel="stylesheet" href="css/06-modal.css">
+<link rel="stylesheet" href="css/07-minigames.css">
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flask" viewBox="0 0 24 24"><path fill="currentColor" d="M9 2h6v2h-1v5.2l5.6 9.4A2.2 2.2 0 0 1 17.7 22H6.3a2.2 2.2 0 0 1-1.9-3.4L10 9.2V4H9z"/><path fill="rgba(255,255,255,.55)" d="M7.7 16h8.6l1.6 2.7a.6.6 0 0 1-.5.9H6.6a.6.6 0 0 1-.5-.9z"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-cell" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#flask"/></svg><svg class="brand-die" viewBox="0 0 24 24"><rect x="1.5" y="1.5" width="21" height="21" rx="5" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/><g fill="var(--accent)"><circle cx="7.5" cy="7.5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="16.5" cy="16.5" r="2"/></g></svg></div>
+      <h1 id="gameTitle">Chemiczne <span>Party</span></h1>
+    </div>
+    <div class="tools">
+      <span class="pill" id="roundPill" hidden></span>
+      <div class="langsw" id="langSw" role="group" aria-label="Język"><button type="button" data-lang="pl" aria-pressed="true">PL</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+      <div class="langsw themesw" id="themeSw" role="group"><button type="button" data-th="light" aria-pressed="false"></button><button type="button" data-th="dark" aria-pressed="false"></button></div>
+      <button class="btn" id="soundBtn" type="button" aria-pressed="true">Dźwięk: wł.</button>
+      <span id="newGameWrap" hidden><button class="btn" id="newGameBtn" type="button">Nowa gra</button></span>
+    </div>
+  </header>
+  <main id="main"></main>
+  <footer class="site-foot">© 2026 CappySoft.pl</footer>
+</div>
+
+<div class="overlay" id="overlay" hidden><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" hidden></div>
+
+<!-- Skrypty: zwykłe <script> (bez modułów), więc gra działa też po otwarciu pliku z dysku. Kolejność ma znaczenie. -->
+<script src="js/data/pl/quiz.js"></script>
+<script src="js/data/pl/truefalse.js"></script>
+<script src="js/data/pl/quiz-extra.js"></script>
+<script src="js/data/pl/truefalse-extra.js"></script>
+<script src="js/data/en/quiz-en.js"></script>
+<script src="js/data/en/truefalse-en.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/data/minigames-data.js"></script>
+<script src="js/config.js"></script>
+<script src="js/core/utils.js"></script>
+<script src="js/core/audio.js"></script>
+<script src="js/core/setup.js"></script>
+<script src="js/core/game.js"></script>
+<script src="js/core/modal.js"></script>
+<script src="js/core/turn.js"></script>
+<script src="js/minigames/_runner.js"></script>
+<script src="js/minigames/buzz.js"></script>
+<script src="js/minigames/bomb.js"></script>
+<script src="js/minigames/memo.js"></script>
+<script src="js/minigames/sort.js"></script>
+<script src="js/minigames/eq.js"></script>
+<script src="js/core/final.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

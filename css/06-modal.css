@@ -1,0 +1,30 @@
+/* overlay */
+.overlay{position:fixed;inset:0;z-index:50;background:color-mix(in srgb,var(--ink) 55%,transparent);display:flex;align-items:center;justify-content:center;
+  padding:max(12px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.modal{background:var(--surface);border-radius:18px;width:100%;max-width:640px;max-height:100%;overflow:auto;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:14px}
+.modal.wide{max-width:920px}
+.modal h2{font:400 clamp(20px,3.6vw,30px)/1.1 var(--font-display);margin:0;text-wrap:balance}
+.modal .lead{font-size:clamp(17px,2.3vw,22px);font-weight:600;line-height:1.4;margin:0;text-wrap:balance}
+.modal p{margin:0}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tag{font:600 11px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 8px;background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+.tag.who{background:var(--pc);color:var(--pk);border-color:transparent}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.answers{grid-template-columns:1fr}}
+.ans{display:flex;gap:10px;align-items:center;text-align:left;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface-2);font-size:16px;min-width:0}
+.ans .kbd{flex:none}
+.ans:not(:disabled):hover{border-color:var(--accent)}
+.ans.ok{background:var(--ok-soft);border-color:var(--ok)}
+.ans.bad{background:var(--bad-soft);border-color:var(--bad)}
+.ans:disabled{cursor:default}
+.bar{height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--accent);width:100%;transition:width .1s linear}
+.bar.warn i{background:var(--bad)}
+.expl{border-radius:12px;padding:12px 14px;background:var(--surface-2);border:1px solid var(--line)}
+.expl.ok{background:var(--ok-soft);border-color:var(--ok)}
+.expl.bad{background:var(--bad-soft);border-color:var(--bad)}
+.expl b{display:block;margin-bottom:2px}
+.actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.big-ico{display:flex;align-items:center;gap:14px}
+.big-ico .tile{width:72px;flex:none}
+.big-ico .tile .sym{font-size:26px}.big-ico .tile .no{font-size:10px}.big-ico .tile .nm{font-size:10px}

@@ -1,0 +1,27 @@
+/* Zmienne CSS: kolory, czcionki, motyw jasny/ciemny */
+/* Layout: plansza jako pierścień komórek układu okresowego + panel graczy; mini-gry w nakładce */
+:root{
+  --bg:#E8F0EE; --surface:#FFFFFF; --surface-2:#F2F7F6; --ink:#13222E; --muted:#56707A; --line:#C6D7D3;
+  --accent:#0C7480; --on-accent:#FFFFFF; --gold:#D99A00; --gold-soft:#FFF1C9;
+  --ok:#18874A; --bad:#C8372B; --ok-soft:#D7F2E2; --bad-soft:#FADAD6;
+  --t-plus:#CDEFE5; --t-plus-ink:#0A6555; --t-minus:#FAD8D2; --t-minus-ink:#A92E1E;
+  --t-quiz:#E3DCFA; --t-quiz-ink:#5232B4; --t-event:#FCE9BF; --t-event-ink:#7F5300;
+  --shadow:0 1px 2px rgba(19,34,46,.08),0 6px 18px rgba(19,34,46,.08);
+  --font-display:'Bungee','Arial Black',system-ui,sans-serif;
+  --font-body:'Lexend',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,'Cascadia Mono',Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1820; --surface:#15232D; --surface-2:#1B2C37; --ink:#E5EFED; --muted:#93A9B0; --line:#2A404B;
+  --accent:#3CC0C8; --on-accent:#052127; --gold:#F2B92E; --gold-soft:#3A2E10;
+  --ok:#4BCB82; --bad:#FF7F70; --ok-soft:#163A27; --bad-soft:#47201B;
+  --t-plus:#113B33; --t-plus-ink:#73E0C3; --t-minus:#45201B; --t-minus-ink:#FF9E8E;
+  --t-quiz:#2A2250; --t-quiz-ink:#BBA8FF; --t-event:#40300E; --t-event-ink:#FFCB5C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.3); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1820; --surface:#15232D; --surface-2:#1B2C37; --ink:#E5EFED; --muted:#93A9B0; --line:#2A404B;
+  --accent:#3CC0C8; --on-accent:#052127; --gold:#F2B92E; --gold-soft:#3A2E10;
+  --ok:#4BCB82; --bad:#FF7F70; --ok-soft:#163A27; --bad-soft:#47201B;
+  --t-plus:#113B33; --t-plus-ink:#73E0C3; --t-minus:#45201B; --t-minus-ink:#FF9E8E;
+  --t-quiz:#2A2250; --t-quiz-ink:#BBA8FF; --t-event:#40300E; --t-event-ink:#FFCB5C;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.3); color-scheme:dark}

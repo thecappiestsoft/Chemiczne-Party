@@ -1,0 +1,51 @@
+/* game */
+.game{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+@media (max-width:920px){.game{grid-template-columns:1fr}}
+.board{container-type:inline-size;container-name:board;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:.8cqw;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.2cqw;box-shadow:var(--shadow)}
+.tile{--tb:var(--surface-2);--ti:var(--ink);position:relative;aspect-ratio:1/1.08;border-radius:6px;background:var(--tb);color:var(--ti);
+  border:1.5px solid color-mix(in srgb,var(--ti) 30%,transparent);display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;transition:box-shadow .2s}
+.tile[data-t=plus]{--tb:var(--t-plus);--ti:var(--t-plus-ink)}
+.tile[data-t=minus]{--tb:var(--t-minus);--ti:var(--t-minus-ink)}
+.tile[data-t=quiz]{--tb:var(--t-quiz);--ti:var(--t-quiz-ink)}
+.tile[data-t=event]{--tb:var(--t-event);--ti:var(--t-event-ink)}
+.tile[data-t=start]{--tb:var(--ink);--ti:var(--bg)}
+.tile .no{position:absolute;top:5%;left:8%;font:600 1.2cqw var(--font-mono)}
+.tile .sym{font:400 3.2cqw/1 var(--font-display)}
+.tile .nm{font:500 1.05cqw var(--font-body);margin-top:.4em}
+.legend .tile .no{font-size:9px}.legend .tile .sym{font-size:19px}.legend .tile .nm{font-size:9px}
+@container board (max-width:600px){.tile .no,.tile .nm{display:none}.tile .sym{font-size:4.4cqw}}
+.tile.flask{box-shadow:0 0 0 3px var(--gold),0 0 16px color-mix(in srgb,var(--gold) 65%,transparent)}
+.tile .fico{position:absolute;top:4%;right:5%;width:30%;color:var(--gold);filter:drop-shadow(0 1px 0 rgba(0,0,0,.25))}
+.toks{position:absolute;inset:6%;display:grid;grid-template:1fr 1fr/1fr 1fr;pointer-events:none}
+.tok{width:min(92%,4.6cqw);aspect-ratio:1;border-radius:50%;background:var(--pc);color:var(--pk);display:grid;place-items:center;
+  font:700 1.6cqw/1 var(--font-mono);border:2px solid var(--surface);box-shadow:0 2px 4px rgba(0,0,0,.35);place-self:center}
+.tok.hop{animation:hop .22s ease-out}
+@keyframes hop{50%{transform:translateY(-35%) scale(1.1)}}
+.tok.p0{grid-area:1/1}.tok.p1{grid-area:1/2}.tok.p2{grid-area:2/1}.tok.p3{grid-area:2/2}
+.tok.big{width:34px;font-size:13px;border-width:2px;flex:none}
+.center{grid-column:2/9;grid-row:2/6;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.2cqw;text-align:center;padding:1cqw;min-width:0}
+.center .rnd{font:400 4.6cqw/1 var(--font-display)}
+.center .sub{color:var(--muted);font-size:max(12px,1.5cqw)}
+.log{list-style:none;margin:0;padding:0;font-size:max(11px,1.35cqw);display:flex;flex-direction:column;gap:.3em;max-width:62ch}
+.log li{opacity:.55}.log li:first-child{opacity:1;font-weight:600}
+@container board (max-width:600px){.log{display:none}}
+.side{display:flex;flex-direction:column;gap:12px}
+.scores{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.scores li{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;border:1.5px solid transparent}
+.scores li.cur{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface))}
+.scores .pn{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.scores .fl{display:flex;align-items:center;gap:3px;font:700 15px var(--font-mono);color:var(--gold)}
+.scores .fl svg{width:16px}
+.scores .at{font:700 15px var(--font-mono);font-variant-numeric:tabular-nums;min-width:52px;text-align:right}
+.scores .at small{font-size:11px;color:var(--muted);font-weight:500}
+.turn{display:flex;flex-direction:column;gap:12px;align-items:stretch}
+.turn-head{display:flex;align-items:center;gap:10px}
+.turn-head b{font-size:17px}
+.dice-row{display:flex;gap:12px;align-items:center}
+.die{width:64px;height:64px;border-radius:14px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:400 30px var(--font-display);flex:none}
+.die.spin{animation:wob .1s linear infinite}
+@keyframes wob{50%{transform:rotate(8deg)}}
+.dice-row .btn{flex:1}
+.mini-legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;font-size:13px;color:var(--muted)}
+.mini-legend span{display:flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;border-radius:4px;flex:none;border:1px solid var(--line)}
